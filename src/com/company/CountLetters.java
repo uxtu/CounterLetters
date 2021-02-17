@@ -7,10 +7,12 @@ public class CountLetters {
     public HashMap counter(String str){
         HashMap<Character, Integer> hmap = new HashMap<>();
         for(char ch : str.toCharArray()){
-            if(hmap.containsKey(ch))
-                hmap.put(ch, hmap.get(ch) + 1);
-            else
-                hmap.put(ch, 1);
+            if((ch >= 'a' & ch <= 'z') | (ch >= 'A' & ch <= 'Z')) {
+                if (hmap.containsKey(ch))
+                    hmap.put(ch, hmap.get(ch) + 1);
+                else
+                    hmap.put(ch, 1);
+            }
         }
 
         return hmap;
